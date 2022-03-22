@@ -4,15 +4,22 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Todos from "./Todos";
 import Todo from "./Todo";
 
-export default function App() {
+const App = () => {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" children={<Todos />} />
-          <Route path="/todo/:id" children={<Todo />} />
+          <Route exact path="/">
+            {" "}
+            <Todos />
+          </Route>
+          <Route path="/todo/:id">
+            {" "}
+            <Todo />
+          </Route>
         </Switch>
       </Router>
     </div>
   );
-}
+};
+export default App;
