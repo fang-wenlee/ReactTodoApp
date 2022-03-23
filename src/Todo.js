@@ -3,9 +3,6 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const Todo = () => {
-  const incompleted = {
-    color: "red"
-  };
   const { id } = useParams();
   const [todo, setTodo] = useState({});
 
@@ -16,7 +13,7 @@ const Todo = () => {
         const responseTodo = res.data;
         setTodo(responseTodo);
       });
-  }, []);
+  }, [id]);
 
   console.log(todo);
   const { id: todoid, title, completed } = todo;
